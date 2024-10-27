@@ -88,8 +88,7 @@ body {
 		rgba(255, 255, 255, 0.9),
 		rgba(255, 255, 255, 0)
 	);
-	border-radius: 20px;
-	border: 1px solid rgba(135, 206, 250, 0.5); /* Sky Blue border */
+	border-radius: 20px; /* Sky Blue border */
 	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 	text-align: center;
 	padding: 2.5rem;
@@ -113,7 +112,7 @@ body {
 
 form select {
 	padding: 1rem;
-	background: rgba(135, 206, 250, 0.5); /* Sky Blue background */
+	background: rgb(19, 62, 135); /* Sky Blue background */
 	border-radius: 0.5rem;
 	flex: 1 1 45rem;
 	border: var(--border);
@@ -125,7 +124,7 @@ form select option {
 	background: rgba(135, 206, 250, 0.2); /* Light Sky Blue */
 	border-radius: 0.5rem;
 	flex: 1 1 45rem;
-	border: var(--border);
+	border: rgb(19, 62, 135);
 	color: black; /* Text color changed to black */
 }
 
@@ -147,12 +146,12 @@ input[type="submit"] {
 .book .glass-row form .box {
 	width: 100%;
 	margin: 0.7rem 0;
-	border-radius: 0.5rem;
-	border: var(--border);
+	border-radius: 1rem;
 	font-size: 1.6rem;
 	color: black; /* Changed to black for better contrast */
 	text-transform: none;
 	padding: 1rem;
+	border: 2px solid rgb(19, 62, 135); /* Add this line for the border */
 }
 
 :root {
@@ -202,20 +201,20 @@ section {
 }
 
 .btn-home:hover {
-	background: var(--green);
+	background: rgb(96, 139, 193);
 	color: var(--black); /* Changed to black on hover */
 }
 
 .btn-home span {
 	padding: 0.7rem 1rem;
 	border-radius: 0.5rem;
-	background: var(--green);
+	background: rgb(19, 62, 135);
 	color: var(--black); /* Changed to black */
 	margin-left: 0.5rem;
 }
 
 .btn-home:hover span {
-	color: var(--green);
+	color: rgb(96, 139, 193);
 	background: var(--black); /* Changed to black on hover */
 	margin-left: 1rem;
 }
@@ -225,29 +224,29 @@ section {
 	margin-top: 1rem;
 	padding: 0.5rem;
 	padding-left: 1rem;
-	border: var(--border);
+	background-color: rgb(19, 62, 135); /* Blue background */
 	border-radius: 0.5rem;
 	box-shadow: var(--box-shadow);
-	color: var(--black); /* Changed to black */
+	color: white; /* White text */
 	cursor: pointer;
 	font-size: 1.7rem;
 }
 
 .btn:hover {
-	background: var(--green);
+	background: rgb(96, 139, 193);
 	color: var(--black); /* Changed to black on hover */
 }
 
 .btn span {
 	padding: 0.7rem 1rem;
 	border-radius: 0.5rem;
-	background: var(--green);
-	color: var(--black); /* Changed to black */
+	background: rgb(19, 62, 135);
+	color: white; /* Changed to black */
 	margin-left: 0.5rem;
 }
 
 .btn:hover span {
-	color: var(--green);
+	color: rgb(96, 139, 193);
 	background: var(--black); /* Changed to black on hover */
 }
 
@@ -809,7 +808,7 @@ section {
 	margin-left: 0.5rem;
 }
 
-.glass-hide {
+/* .glass-hide {
 	background: linear-gradient(
 		135deg,
 		rgb(211, 190, 190),
@@ -821,20 +820,28 @@ section {
 	-webkit-backdrop-filter: blur(40px);
 
 	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
+	border-top-right-radius: 20px; */
 
-	/* border-radius: 20px; */
+/* border-radius: 20px; */
 
-	/* border: 1px solid rgba(255, 255, 255, 0.18); */
+/* border: 1px solid rgba(255, 255, 255, 0.18); */
 
-	box-shadow: 0 -20px 28px 0 rgba(253, 244, 244, 0.534);
+/* box-shadow: 0 -20px 28px 0 rgba(253, 244, 244, 0.534);
 
 	text-align: center;
 	padding: 2.5rem;
 
 	height: 500px;
 	/* width: 98%; */
-	margin: auto;
+/* margin: auto;
+} */
+
+.glass-hide {
+	background-color: white; /* Set the background color to white */
+	padding: 40px; /* Add padding for spacing */
+	border-radius: 15px; /* Optional: Add rounded corners */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+	text-align: center; /* Center the text inside */
 }
 
 .glass-hide .btn {
