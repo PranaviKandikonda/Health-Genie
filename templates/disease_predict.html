@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AViD Minds</title>
-    <link rel="icon" href="./static/images/heart-pulse-solid.svg" />
+    <title>Health-Genie</title>
+    <link rel="icon" href="static\images\website-logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -165,7 +165,7 @@
   <body>
     <header class="header">
       <a href="{{url_for('index')}}" class="logo" style="color: white;"
-        ><i class="fas fa-heartbeat"></i> AViD Minds</a
+        ><i class="fas fa-heartbeat"></i> Health-Genie</a
       >
       <nav class="navbar">
         {% if username %}
@@ -215,7 +215,7 @@
           method="POST"
         >
           <a href="{{url_for('index')}}" class="logo"
-            ><i class="fas fa-heartbeat"></i> AViD Minds</a
+            ><i class="fas fa-heartbeat"></i> Health-Genie</a
           ><br /><br />
           <label for="Symptom1">Symptom 1:</label>
           <select required type="text" name="Symptom1">
@@ -259,7 +259,7 @@
           ><br /><br />
           <input type="submit" value="Predict" class="btn" name="form" />
           <p style="color: white; font-size: 1.3rem; margin-top: 2rem">
-            By continuing, you agree to AViD Minds's
+            By continuing, you agree to Health-Genie's
             <a style="color: #16a085" href="{{url_for('policy')}}"
               >Terms of Service</a
             >
@@ -488,7 +488,7 @@
         </div>
 
 
-      <div class="credit">made with 💚 | AVID Minds @ 2024</div>
+      <div class="credit">&copy; Health-Genie @ 2024</div>
     </section>
     <script>
       const disease_info = {

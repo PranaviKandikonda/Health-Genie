@@ -90,92 +90,19 @@
 			.quick-links a:hover {
 				text-decoration: underline;
 			}
-
-			.chatbot-button {
-				position: fixed;
-				bottom: 20px;
-				right: 20px;
-				background-color: #133e87;
-				color: white;
-				border: none;
-				border-radius: 50%;
-				width: 60px;
-				height: 60px;
-				font-size: 24px;
-				cursor: pointer;
-				box-shadow: 0 4px 10px rgba(22, 158, 133, 0.5);
-			}
-
-			.chat-container {
-				display: none;
-				position: fixed;
-				bottom: 80px;
-				right: 20px;
-				width: 300px;
-				background-color: #ffffff;
-				border-radius: 10px;
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-				overflow: hidden;
-			}
-
-			.chat-header {
-				background-color: #133e87;
-				color: white;
-				padding: 10px;
-				text-align: center;
-			}
-
-			.chat-body {
-				max-height: 200px;
-				padding: 10px;
-				overflow-y: auto;
-			}
-
-			.chat-input {
-				display: flex;
-				padding: 10px;
-				border-top: 1px solid #ccc;
-			}
-
-			.chat-input input {
-				flex: 1;
-				padding: 8px;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-			}
-
-			.chat-input button {
-				background-color: #133e87;
-				color: white;
-				border: none;
-				padding: 8px;
-				margin-left: 5px;
-				cursor: pointer;
-			}
-
-			.policy-link,
-			.register-link {
-				color: #133e87;
-				text-decoration: none;
-			}
-
-			.policy-link:hover,
-			.register-link:hover {
-				text-decoration: underline;
-			}
 		</style>
 	</head>
 
 	<body>
 		<section class="home" id="home">
 			<div class="content">
-				<h3>Privacy Policy for AViD Minds</h3>
+				<h3>Privacy Policy for Health-Genie's</h3>
 				<p style="font-size: 1.5rem; font-weight: 800">
 					AI-Driven Personalized Telemedicine Platform
 				</p>
 
 				<p>
-					Welcome to AViD Minds, your AI-driven personalized telemedicine
+					Welcome to Health-Genie's, your AI-driven personalized telemedicine
 					platform. We are dedicated to safeguarding your personal information.
 					This Privacy Policy explains how we collect, use, disclose, and
 					protect your data when using our website and services.
@@ -223,9 +150,9 @@
 				<div class="section-title">4. Data Sharing:</div>
 				<p>
 					<strong>a. Non-Disclosure:</strong><br />
-					AViD Minds will not share your personal information, health records,
-					or any other data with third-party platforms or services without your
-					consent.
+					Health-Genie's will not share your personal information, health
+					records, or any other data with third-party platforms or services
+					without your consent.
 				</p>
 				<p>
 					<strong>b. Legal Obligations:</strong><br />
@@ -250,7 +177,7 @@
 				<p>
 					<strong>a. Notification of Changes:</strong><br />
 					Any modifications to our Privacy Policy will be communicated through
-					the website or via email. Continued use of AViD Minds implies
+					the website or via email. Continued use of Health-Genie's implies
 					acceptance of these changes.
 				</p>
 
@@ -264,38 +191,11 @@
 				</p>
 
 				<p>
-					By using AViD Minds, you agree to the terms outlined in this Privacy
-					Policy. Thank you for trusting us with your healthcare needs.
+					By using Health-Genie's, you agree to the terms outlined in this
+					Privacy Policy. Thank you for trusting us with your healthcare needs.
 				</p>
 			</div>
-
-			<!-- <button class="chatbot-button" id="chatbot-toggle">
-				<i class="fas fa-comment-alt"></i>
-			</button>
-
-			<!-- <div class="chat-container" id="chat-container">
-				<div class="chat-header">
-					Chat with Support
-					<button
-						id="chat-close"
-						style="float: right; background: none; border: none; color: white"
-					>
-						×
-					</button>
-				</div>
-				<div class="chat-body" id="chat-body"> -->
-					<!-- Messages will be appended here -->
-				<!-- </div>
-				<div class="chat-input">
-					<input
-						type="text"
-						id="user-input"
-						placeholder="Type your message..."
-					/>
-					<button id="send-button">Send</button>
-				</div>
-			</div>
-		</section> -->
+		</section>
 
 		<!-- Footer -->
 		<section class="footer">
@@ -324,43 +224,5 @@
 			</div>
 			<div class="credit">&copy; Health-Genie @ 2024</div>
 		</section>
-		<!-- 
-		<script>
-			const chatbotToggle = document.getElementById("chatbot-toggle")
-			const chatContainer = document.getElementById("chat-container")
-			const chatClose = document.getElementById("chat-close")
-			const sendButton = document.getElementById("send-button")
-			const userInput = document.getElementById("user-input")
-			const chatBody = document.getElementById("chat-body")
-
-			// Toggle chat container
-			chatbotToggle.onclick = () => {
-				chatContainer.style.display =
-					chatContainer.style.display === "none" ? "block" : "none"
-			}
-
-			// Close chat container
-			chatClose.onclick = () => {
-				chatContainer.style.display = "none"
-			}
-
-			// Handle message sending
-			sendButton.onclick = () => {
-				const message = userInput.value.trim()
-				if (message) {
-					// Add user message to chat body
-					const userMessage = document.createElement("div")
-					userMessage.textContent = "You: " + message
-					chatBody.appendChild(userMessage)
-					userInput.value = ""
-
-					// Simulate a bot response
-					const botResponse = document.createElement("div")
-					botResponse.textContent = "Bot: Thank you for your message!"
-					chatBody.appendChild(botResponse)
-				}
-			}
-		</script>
-		-->
 	</body>
 </html>
