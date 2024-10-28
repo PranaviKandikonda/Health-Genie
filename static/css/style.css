@@ -24,14 +24,14 @@ a.disabled {
 }
 
 body {
-	background: linear-gradient(
+	/* background: linear-gradient(
 		135deg,
-		/* Diagonal direction */ #ffffff,
-		/* White */ #f8f5e1,
-		/* Cream */ #f5f5f5,
-		/* Smoke */ #f0f8ff,
-		/* Light Sky Blue */ #d4edda /* Light Green */
-	);
+		 #ffffff,
+		 #f8f5e1,
+		 #f5f5f5,
+		#f0f8ff,
+		 #d4edda 
+	); */
 	background-size: cover;
 	background-position: center;
 	/* background-repeat: no-repeat; */
@@ -42,11 +42,11 @@ body {
 }
 
 .glass {
-	background: linear-gradient(
+	/* background: linear-gradient(
 		135deg,
 		rgba(255, 255, 255, 0.1),
 		rgba(255, 255, 255, 0)
-	);
+	); */
 
 	/* backdrop-filter: blur(10px);
 
@@ -83,11 +83,11 @@ body {
 }
 
 .glass-row {
-	background: linear-gradient(
+	/* background: linear-gradient(
 		135deg,
 		rgba(255, 255, 255, 0.9),
 		rgba(255, 255, 255, 0)
-	);
+	); */
 	border-radius: 20px; /* Sky Blue border */
 	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 	text-align: center;
@@ -623,11 +623,11 @@ section {
 		opacity: 0;
 		transform-origin: top right;
 		/* transition: none; */
-		background: linear-gradient(
+		/* background: linear-gradient(
 			135deg,
 			rgba(255, 255, 255, 0.1),
 			rgba(163, 155, 155, 0.308)
-		);
+		); */
 
 		backdrop-filter: blur(10px);
 
@@ -875,11 +875,11 @@ table th {
 }
 
 .glass-row-book {
-	background: linear-gradient(
+	/* background: linear-gradient(
 		135deg,
 		rgba(255, 255, 255, 0.1),
 		rgba(255, 255, 255, 0)
-	);
+	); */
 
 	/* backdrop-filter: blur(10px);
 
