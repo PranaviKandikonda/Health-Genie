@@ -37,10 +37,6 @@ body {
 	/* background-repeat: no-repeat; */
 }
 
-::selection {
-	color: #16a085;
-}
-
 .glass {
 	/* background: linear-gradient(
 		135deg,
