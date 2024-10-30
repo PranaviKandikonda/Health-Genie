@@ -35,9 +35,9 @@ load_dotenv()
 
 app.secret_key = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS') == 'True'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
-app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT'))
+app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT') or 465)
 app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS') == 'True'
 app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL') == 'True'
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
@@ -164,6 +164,11 @@ def profile():
         user_appointments = user.appointments
         return render_template('patient-profile.html', username=username,Email=Email, user_appointments=user_appointments)
     return render_template('index')
+
+# @app.route('/healthy-blogs')
+# def blogs():
+#     return render_template('healthy-blogs.html')
+
 
 @app.route('/patient-register', methods=['GET', 'POST'])
 def register():
@@ -453,11 +458,11 @@ def prescribe_medicine(appointment_id):
         # Create content for the PDF
         content = []
 
-        # Add Jansevak header with green color
-        # jansevak_header = Paragraph("<font color='green' size='24'><b>Jansevak: We Care for Your Health</b></font>", header_style)
-        # content.append(jansevak_header)
+        # Add Health-Genie header with green color
+        # Health-Genie_header = Paragraph("<font color='green' size='24'><b>Health-Genie: We Care for Your Health</b></font>", header_style)
+        # content.append(Health-Genie_header)
 
-        # Add space after Jansevak header
+        # Add space after Health-Genie header
         content.append(Spacer(1, 12))
 
         # Add patient details
@@ -485,7 +490,7 @@ def prescribe_medicine(appointment_id):
         # Add doctor details and footer
         doctor_details = (
             f"<b>Prescribed by Dr. {doctor.username} ({doctor.type_of_doctor})</b><br/>"
-            "Thank you for choosing Jansevak! We wish you good health."
+            "Thank you for choosing Health-Genie! We wish you good health."
         )
         content.append(Paragraph(doctor_details, styles['Normal']))
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health-Genie</title>
-    <link rel="icon" href="static\images\website-logo.png" />
+    <link rel="icon" href = "static\images\website-logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -20,296 +20,515 @@
     />
     <link rel="stylesheet" href="./static/css/style.css" />
     <style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-  }
-
-  /* Services Section Styles */
-  .services {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #f0f4c3, #e1bee7); /* Gradient background */
-    border-radius: 15px;
-    text-align: center;
-  }
-
-  .services .heading {
-    font-size: 2.5rem;
-    color: #4a148c;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-  }
-
-  .services .heading span {
-    color: #ff4081;
-  }
-
-  .box-container {
-    display: flex;
-    justify-content: center; /* Center the boxes */
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 30px; /* Spacing between boxes */
-    max-width: 1200px; /* Maintain max-width */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Optional padding for smaller screens */
-  }
-
-  .box {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    padding: 25px;
-    width: 250px; /* Fixed width */
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center; /* Center text inside the box */
-  }
-
-  .box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  .icon {
-    font-size: 3rem; /* Larger icon size */
-    color: #4a148c; /* Icon color */
-    margin-bottom: 15px; /* Space below the icon */
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 10px 0;
-  }
-
-  p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-
-  .btn {
-    background: #4caf50; /* Green background */
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-
-  .btn:hover {
-    background: #388e3c; /* Darker green on hover */
-  }
-
-  /* Doctors Section Styles */
-  .doctors {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #e8d7f5, #ffe4e1);
-    border-radius: 20px;
-    text-align: center;
-  }
-
-  .doctors .heading {
-    font-size: 3rem;
-    color: #6a1b9a;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-  }
-
-  .doctors .heading span {
-    color: #ff7043;
-  }
-
-  .box-container {
-    display: flex;
-    justify-content: center; /* Center the boxes */
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 30px; /* Space between cards */
-    max-width: 1200px; /* Maintain max-width */
-    margin: 0 auto; /* Center the container */
-  }
-
-  .glass-box {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-    width: 250px; /* Fixed width for uniformity */
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .glass-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  }
-
-  .glass-box img {
-    height: 30rem;
-    width: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-
-  /* Blogs Section Styles */
-  .blogs {
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
-    border-radius: 15px;
+.footer-section {
+    background-color: rgb(96, 138, 193); /* Blue background */
+    color: white;
+    padding: 40px 0;
     text-align: center;
     margin-top: 40px;
-  }
+    border-radius: 8px;
+}
 
-  .blogs .heading {
+.box-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Increased gap between boxes */
+    margin-top: 20px;
+}
+
+.credit {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    gap: 12px;
+}
+
+.quick-links a {
+    color: white; /* White color for links */
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.quick-links a:hover {
+    color: #e0e0e0; /* Light grey on hover */
+    text-decoration: underline;
+}
+
+
+      
+      /* General Styling for About Section */
+.about {
+    padding: 60px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.about .heading {
     font-size: 2.5rem;
-    color: #00796b;
+    color: #133E87;
+    margin-bottom: 40px;
     font-weight: bold;
+}
+
+/* Row Styling */
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Image Styling */
+.about .row .image {
+    flex: 1 1 45%;
+    text-align: center;
+}
+
+.about .row .image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about .row .image img:hover {
+    transform: scale(1.05);
+}
+
+/* Content Styling */
+.about .row .content {
+    flex: 1 1 50%;
+    text-align: left;
+}
+
+.about .row .content h3 {
+    font-size: 2rem;
+    color: #133E87;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about .row .content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.about .row .content p:last-of-type {
+    margin-bottom: 20px;
+}
+
+/* Optional Button or Link Styling */
+.about .row .content a {
+    display: inline-block;
+    font-size: 1rem;
+    color: white;
+    background-color: #133E87;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.about .row .content a:hover {
+    background-color: #11336b;
+}
+
+      /* General Styling for the Blogs Section */
+#blogs {
+    padding: 60px 0;
+    text-align: center;
+    background-color: white;
+}
+
+#blogs .heading {
+    font-size: 2.5rem;
+    color: #133E87;
     margin-bottom: 30px;
-    text-transform: uppercase;
-  }
+    font-weight: bold;
+}
 
-  .blogs .heading span {
-    color: #0288d1;
-  }
+/* Box Container Styling */
+#blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-  /* Blog Container */
-  .box-container {
+/* Individual Glass Box Styling */
+#blogs .glass-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+#blogs .glass-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+#blogs .glass-box .image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Content Area Styling */
+#blogs .glass-box .content {
+    padding: 20px;
+}
+
+#blogs .glass-box .content .icon {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+#blogs .glass-box .content .icon i {
+    margin-right: 5px;
+}
+
+/* Blog Title Styling */
+#blogs .glass-box .content h3 {
+    font-size: 1.6rem;
+    color: #133E87;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+#blogs .glass-box .content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+#blogs .glass-box .content .btn {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(19, 62, 135);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#blogs .glass-box .content .btn:hover {
+    background-color: #11336b;
+}
+
+#blogs .glass-box .content .btn span {
+    margin-left: 8px;
+}
+
+      .services {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.box-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+}
+
+.box {
+    background-color: #ffffff; /* White background for contrast */
+    border: 1px solid #e0e0e0; /* Light border for subtle definition */
+    border-radius: 15px; /* Slightly larger border radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 25px; /* Increased padding for more space */
+    width: 250px; /* Fixed width */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.box:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.box i {
+    font-size: 1.5em; /* Adjust icon size */
+    width: 60px; /* Width of the circle */
+    height: 60px; /* Height of the circle */
+    background-color: rgb(96, 138, 193); /* Background color */
+    color: rgb(19, 62, 135); /* Icon color */
+    border-radius: 50%; /* Circular shape */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    margin: 0 auto 15px; /* Center horizontally with margin below */
+}
+
+
+
+
+.box h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.box p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    background-color: rgb(19, 62, 135);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(15, 50, 105);
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 100%;
+        max-width: 300px; /* Ensures responsiveness */
+    }
+}
+
+      .what-we-do {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .what-we-do h2 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+      }
+
+      .what-we-do p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .booking {
+        background-color: #f0f8ff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .book-now {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .book-now:hover {
+        background-color: #45a049;
+      }
+
+      .owl-dots {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .owl-dot {
+        height: 13px;
+        width: 13px;
+        margin: 0 5px;
+        outline: none !important;
+        border-radius: 50%;
+        border: 2px solid rgb(46, 77, 248) !important;
+        transition: all 0.3s ease;
+      }
+
+      .owl-dot.active {
+        width: 35px;
+        border-radius: 14px;
+      }
+
+      .owl-dot.active,
+      .owl-dot:hover {
+        background: rgb(46, 77, 248) !important;
+      }
+      .doctors {
+    padding: 50px 0; /* Add padding for spacing */
+}
+
+.doctors .heading {
+    text-align: center; /* Center the heading */
+    margin-bottom: 30px; /* Spacing below heading */
+    font-size: 2.5em; /* Font size */
+    color: #333; /* Darker text color */
+}
+
+.doctors .carousel {
+    display: flex; /* Flexbox for horizontal alignment */
+    overflow: hidden; /* Hide overflow for carousel effect */
+}
+
+.glass-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: 0 15px; /* Spacing between boxes */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    overflow: hidden; /* Prevent overflow of image */
+    text-align: center; /* Center text */
+}
+
+.glass-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.glass-box img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-bottom: 2px solid rgba(96, 138, 193, 0.5); /* Bottom border for separation */
+}
+
+.glass-box h3 {
+    font-size: 1.8em; /* Font size for doctor name */
+    color: #333; /* Dark text for names */
+    margin: 10px 0; /* Spacing above and below */
+}
+
+.glass-box span {
+    font-size: 1.2em; /* Font size for specialty */
+    color: #666; /* Lighter color for specialty */
+}
+/* General Styling for the Section */
+#scans {
+    padding: 60px 0;
+    text-align: center;
+    background-color: white;
+}
+
+#scans .heading {
+    font-size: 2.5rem;
+    color: #133E87;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Box Container Styling */
+#scans .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
+}
 
-  .glass-box {
-    background: rgba(255, 255, 255, 0.6); /* Glassmorphism effect */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
+/* Individual Box Styling */
+#scans .box {
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 280px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .glass-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Image Styling */
-  .glass-box .image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-
-  /* Blog Content */
-  .glass-box .content {
-    padding: 20px;
-    color: #333;
-  }
-
-  .content .icon {
-    font-size: 0.9rem;
-    color: #607d8b;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .content h3 {
-    font-size: 1.4rem;
-    color: #0288d1;
-    margin-bottom: 10px;
-  }
-
-  .content p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-
-  .btn {
-    display: inline-block;
-    background: rgb(19, 62, 135);
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-
-  .btn:hover {
-    background: rgb(96, 138, 193);
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .box-container {
-      gap: 15px;
-    }
-    .glass-box {
-      width: 90%;
-    }
-    .blogs .heading {
-      font-size: 2rem;
-    }
-  }
-
-  /* Owl Carousel Dots Styles */
-  .owl-dots {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    margin-top: 20px;
-  }
+}
 
-  .owl-dot {
-    height: 13px;
-    width: 13px;
-    margin: 0 5px;
-    outline: none !important;
+#scans .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+#scans .box i {
+    font-size: 3rem;
+    background-color: rgba(19, 62, 135, 0.1);
+    padding: 20px;
     border-radius: 50%;
-    border: 2px solid rgb(46, 77, 248) !important;
-    transition: all 0.3s ease;
-  }
+    color: rgb(19, 62, 135);
+    margin-bottom: 15px;
+}
 
-  .owl-dot.active {
-    width: 35px;
-    border-radius: 14px;
-  }
+/* Box Title Styling */
+#scans .box h3 {
+    font-size: 1.8rem;
+    color: #133E87;
+    margin-bottom: 15px;
+}
 
-  .owl-dot.active,
-  .owl-dot:hover {
-    background: rgb(46, 77, 248) !important;
-  }
+/* Paragraph Styling */
+#scans .box p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
-  /* Icons Container Styles */
-  .icons-container {
-    display: flex; /* or use 'display: grid;' */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    flex-wrap: wrap; /* For flexbox only */
-    gap: 20px; /* Add spacing between items */
-    padding: 20px; /* Add padding around the container */
-  }
+/* Button Styling */
+#scans .box .btn {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(19, 62, 135);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
 
-  .icon-item {
-    background-color: #e0e0e0; /* Example background color */
-    padding: 20px; /* Padding for icon items */
-    border-radius: 10px; /* Rounded corners */
-    text-align: center; /* Center text inside items */
-  }
-</style>
+#scans .box .btn:hover {
+    background-color: #11336b;
+}
 
+#scans .box .btn span {
+    margin-left: 8px;
+}
+
+    </style>
   </head>
 
   <body>
@@ -334,12 +553,12 @@
       <div id="menu-btn" class="fas fa-bars"></div>
     </header>
 
-    <section class="home" id="home">
+    <section class="home" style="background-color: white;" id="home">
       <div class="image">
-        <img src="static\images\home-page-image.avif" alt="" />
+        <img src="static\images\home-page-image.avif" style="margin-right: 50rem; height:550px" alt="home-page" />
       </div>
       <div class="content">
-        <h3>
+        <h3 style="color: black margin-left:10rem">
           Welcome to <span style="color: rgb(19, 62, 135)">Health-Genie</span> . <br />
           <span style="font-size: 4rem"
             >your dedicated virtual Healthcare assistant</span
@@ -379,109 +598,189 @@
     </section>
 
     <section class="services" id="services">
-  <h1 class="heading">Our Services & <span>Features</span></h1>
-  <div class="box-container">
-    <div class="box">
-      <i class="fas fa-notes-medical" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>24/7 AI Chat</h3>
-      <p>Instant health advice from our AI assistant, anytime, anywhere.</p>
-      <a href="/chat" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-comments" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Chat with Doctors</h3>
-      <p>Get personalized medical advice from licensed professionals.</p>
-      <a href="" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-video" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Video Conference</h3>
-      <p>Book virtual appointments with top specialists.</p>
-      <a href="{{url_for('videocall')}}" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-user-doctor" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Book Doctors</h3>
-      <p>Find and schedule appointments with in-network doctors.</p>
-      <a href="#book" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-envelope" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>SMS & Email Alerts</h3>
-      <p>Receive reminders, results, and alerts directly to your device.</p>
-      <a href="" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-heartbeat" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Scan Reports</h3>
-      <p>Upload, store, and access your medical records securely.</p>
-      <a href="#scans" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-plus" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Emergency Assistance</h3>
-      <p>Quick response and coordination with hospitals in emergencies.</p>
-      <a href="" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fa-brands fa-blogger" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Health Blogs</h3>
-      <p>Read our wellness tips and health advice, updated regularly.</p>
-      <a href="" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-shield-halved" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Privacy</h3>
-      <p>We prioritize data privacy and security for your peace of mind.</p>
-      <a href="{{url_for('policy')}}" class="btn">Learn more</a>
-    </div>
-    <div class="box">
-      <i class="fas fa-hand-holding-heart" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
-      <h3>Total Care</h3>
-      <p>Complete support, from daily health to critical emergencies.</p>
-      <a href="" class="btn">Learn more</a>
-    </div>
-  </div>
-</section>
-
-    <section class="doctors" id="doctors">
-  <h1 class="heading">Our <span>Doctors</span></h1>
-  <div class="box-container">
-    <div class="carousel owl-carousel">
-      <div class="glass-box">
-        <img src="../static/images/doc2.jpg" alt="Dr.John" />
-        <h3>Dr.John</h3>
-        <span style="color:rgb(19, 62, 135)">Pediatrician</span>
-      </div>
-      <div class="glass-box">
-        <img src="../static/images/doc1.jpg" alt="Dr.Warner" />
-        <h3>Dr.Warner</h3>
-        <span style="color:rgb(19, 62, 135)">Cardiologist</span>
-      </div>
-      <div class="glass-box">
-        <img src="../static/images/doc3.jpeg" alt="Dr.Kiran" />
-        <h3>Dr.Kiran</h3>
-        <span style="color:rgb(19, 62, 135)">Orthopedic Surgeon</span>
-      </div>
-      <div class="glass-box">
-        <img src="../static/images/doc4.jpg" alt="Dr.Ravi" />
-        <h3>Dr.Ravi</h3>
-        <span style="color:rgb(19, 62, 135)">Psychiatrist</span>
-      </div>
-      <div class="glass-box">
-        <img src="../static/images/doc5.jpeg" alt="Dr. Santhosh" />
-        <h3>Dr. Santhosh</h3>
-        <span style="color:rgb(19, 62, 135)">Dermatologist</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section class="services" id="scans">
-      <h1 class="heading">Scans &<span> Predictions</span></h1>
+      <h1 class="heading">services & Features we provide here</h1>
       <div class="box-container">
         <div class="box">
-          <i class="fas fa-stethoscope" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
+          <i class="fas fa-notes-medical" style="background-color:rgb(96,138, 193); color: rgb(19, 62, 135)"></i>
+          <h3>24 | 7 AI Chat</h3>
+          <p>
+            Get instant diagnoses and health advice from our AI assistant
+            anytime, anywhere.
+          </p>
+          <a href="/chat" class="btn">
+            learn more <span class="fa-solid fa-arrow-right"></span
+          ></a>
+        </div>
+        <div class="box">
+          <i class="fas fa-video" style="background-color:rgb(96,138, 193); color: rgb(19, 62, 135)"></i>
+          <h3>Video Conference</h3>
+          <p>
+            Schedule virtual appointments and consultations with top specialists
+            doctors.
+          </p>
+          <a href="{{url_for('videocall')}}" class="btn">
+            learn more <span class="fa-solid fa-arrow-right"></span
+          ></a>
+        </div>
+        <div class="box">
+          <i class="fas fa-user-doctor" style="background-color:rgb(96,138, 193); color: rgb(19, 62, 135)"></i>
+          <h3>Book Doctors</h3>
+          <p>Search for in-network doctors and instantly book appointments.</p>
+          <a href="#book" class="btn">
+            learn more <span class="fa-solid fa-arrow-right"></span
+          ></a>
+        </div>
+        <div class="box">
+          <i class="fas fa-envelope" style="background-color:rgb(96,138, 193); color: rgb(19, 62, 135)"></i>
+          <h3>Mail service</h3>
+          <p>
+            Get medication reminders, test results, and appointment alerts via
+            SMS or email.
+          </p>
+          <a href="" class="btn">
+            learn more <span class="fa-solid fa-arrow-right"></span
+          ></a>
+        </div>
+        <div class="box">
+          <i class="fas fa-heartbeat" style="background-color:rgb(96,138, 193); color: rgb(19, 62, 135)"></i>
+          <h3>Scan Reports</h3>
+          <p>
+            Upload and store lab tests, imaging scans, and medical records
+            securely.
+          </p>
+          <a href="#scans" class="btn">
+            learn more <span class="fa-solid fa-arrow-right"></span
+          ></a>
+        </div>
+        <div class="box">
+          <i class="fa-brands fa-blogger" style="background-color:rgb(96,138, 193); color: rgb(19, 62, 135)"></i>
+          <h3>Healthy Blogs</h3>
+          <p>
+            Read our regularly updated blogs with health tips and wellness
+            advice.
+          </p>
+          <a href="#blogs" class="btn">
+            learn more <span class="fa-solid fa-arrow-right"></span
+          ></a>
+        </div>
+        <div class="box">
+          <i class="fas fa-shield-halved" style="background-color:rgb(96,138, 193); color: rgb(19, 62, 135)"></i>
+          <h3>Privacy</h3>
+          <p>We take data privacy and security very seriously.</p>
+          <a href="{{url_for('policy')}}" class="btn">
+            learn more <span class="fa-solid fa-arrow-right"></span
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="doctors" id="doctors">
+  <h1 class="heading">our super specialized doctors</h1>
+  <div class="box-container">
+    <div class="carousel owl-carousel">
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="static\images\doctor5 women.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Sarah Johnson</h3>
+        <span>Pediatrician</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="../static/images/doc1.jpg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Michael Thompson</h3>
+        <span>Cardiologist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="static\images\doctor6 women.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Emily Davis</h3>
+        <span>Orthopedic Surgeon</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="../static/images/doc4.jpg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Daniel Lee</h3>
+        <span>Psychiatrist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="static\images\dcotor4 women.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Olivia Martinez</h3>
+        <span>Dermatologist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="static\images\doc2.jpg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. James Smith</h3>
+        <span>Neurologist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="static\images\doc3.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Chris Brown</h3>
+        <span>Gynecologist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="../static/images/doc5.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. William Garcia</h3>
+        <span>Endocrinologist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="../static/images/doctor1.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Mia Wilson</h3>
+        <span>General Practitioner</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="../static/images/doctor2.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Lucas Taylor</h3>
+        <span>Ophthalmologist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="../static/images/doctor3.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Charlotte Anderson</h3>
+        <span>Hematologist</span>
+      </div>
+      <div class="glass-box" style="height: 43rem">
+        <center>
+          <img src="../static/images/doctor7.jpeg" alt="" style="height: 30rem; width: 25rem" />
+        </center>
+        <h3>Dr. Ethan Thomas</h3>
+        <span>Oncologist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blogs" id="book">
+  <h1 class="heading">Book your Appointment Here</h1>
+  <center>
+    <a class="btn" href="{{ url_for('book_appointment') }}">
+      <h3>Book Appointment</h3>
+    </a>
+  </center>
+</section>
+
+
+    <section class="services" id="scans">
+      <h1 class="heading" style="color: black;">Scan and predict made more easier!</h1>
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-stethoscope" style="color:rgb(19, 62, 135)"></i>
           <h3>Disease Prediction</h3>
           <p>
             Disease prediction using ML involves analyzing medical data to
@@ -489,47 +788,47 @@
             intervention.
           </p>
           <a href="{{url_for('disease_predict')}}" class="btn">
-            Explore <span class="fas fa-chevron-right"></span
+            Explore <span class="fa-solid fa-arrow-right"></span
           ></a>
         </div>
         <div class="box">
-          <i class="fas fa-lungs" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
+          <i class="fas fa-lungs" style="color:rgb(19, 62, 135)"></i>
           <h3>Lung Cancer</h3>
           <p>
             Lung cancer is a malignant lung tumor, often caused by smoking.
             Symptoms include coughing, chest pain, and difficulty breathing.
           </p>
           <a href="{{url_for('lung')}}" class="btn">
-            Explore <span class="fas fa-chevron-right"></span
+            Explore <span class="fa-solid fa-arrow-right"></span
           ></a>
         </div>
         <div class="box">
-          <i class="fas fa-brain" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
+          <i class="fas fa-brain" style="color:rgb(19, 62, 135)"></i>
           <h3>Brain Tumor</h3>
           <p>
             Brain tumors are abnormal growths in the brain. Symptoms vary, and
             treatment may involve surgery, radiation, or chemotherapy.
           </p>
           <a href="{{url_for('braintumor')}}" class="btn">
-            Explore <span class="fas fa-chevron-right"></span
+            Explore <span class="fa-solid fa-arrow-right"></span
           ></a>
         </div>
         <div class="box">
-          <i class="fas fa-eye" style="color: rgb(19, 62, 135); background-color: rgb(155, 199, 255)"></i>
+          <i class="fas fa-eye" style="color:rgb(19, 62, 135)"></i>
           <h3>cataract</h3>
           <p>
             Cataract is a clouding of the eye's lens, causing blurry vision.
             Common with aging, surgery replaces the clouded lens for clarity.
           </p>
           <a href="{{url_for('cataract')}}" class="btn">
-            Explore <span class="fas fa-chevron-right"></span
+            Explore <span class="fa-solid fa-arrow-right"></span
           ></a>
         </div>
       </div>
     </section>
 
     <section class="blogs" id="blogs">
-      <h1 class="heading">our <span> Blogs</span></h1>
+      <h1 class="heading" style="color:black">Go through our blogs here...</h1>
       <div class="box-container">
         <div class="glass-box">
           <div class="image">
@@ -541,7 +840,7 @@
           <div class="content">
             <div class="icon">
               <a href="" class="disabled" style="color: black;"
-                ><i class="fas fa-calendar"></i> 27th oct, 2024</a
+                ><i class="fas fa-calendar" style="color: rgb(19, 62, 135)"></i>26th october, 2024</a
               >
             </div>
             <h3>Transforming Healthcare</h3>
@@ -549,7 +848,7 @@
               Transforming Healthcare: The Human Touch of AI and Telemedicine.
             </p>
             <a href="{{url_for('Transforming_Healthcare')}}" class="btn"
-              >Explore<span class="fas fa-chevron-right"></span
+              >Explore Here<span class="fa-solid fa-arrow-right"></span
             ></a>
           </div>
         </div>
@@ -563,7 +862,7 @@
           <div class="content">
             <div class="icon">
               <a href="" class="disabled" style="color: black;"
-                ><i class="fas fa-calendar"></i> 27th oct, 2024</a
+                ><i class="fas fa-calendar" style="color: rgb(19, 62, 135)"></i>25th october 2024</a
               >
             </div>
             <h3>Comprehensive Guide to Health</h3>
@@ -572,7 +871,7 @@
               Body.
             </p>
             <a href="{{url_for('Holistic_Health')}}" class="btn"
-              >Explore<span class="fas fa-chevron-right"></span
+              >Explore Here <span class="fa-solid fa-arrow-right"></span
             ></a>
           </div>
         </div>
@@ -586,13 +885,13 @@
           <div class="content">
             <div class="icon">
               <a href="" class="disabled" style="color: black;"
-                ><i class="fas fa-calendar"></i> 27th oct, 2024</a
+                ><i class="fas fa-calendar" style="color: rgb(19, 62, 135)"></i> 30th october, 2024</a
               >
             </div>
             <h3>The Power of a Healthy Diet</h3>
             <p>"Nourishing Your Body: The Power of a Healthy Diet</p>
             <a href="{{url_for('Nourishing_Body')}}" class="btn"
-              >Explore<span class="fas fa-chevron-right"></span
+              >Explore Here<span class="fa-solid fa-arrow-right"></span
             ></a>
           </div>
         </div>
@@ -606,7 +905,7 @@
           <div class="content">
             <div class="icon">
               <a href="" class="disabled" style="color: black;"
-                ><i class="fas fa-calendar"></i> 27th oct, 2024</a
+                ><i class="fas fa-calendar" style="color: rgb(19, 62, 135)"></i> 1st november, 2024</a
               >
             </div>
             <h3>The Importance of Games</h3>
@@ -614,7 +913,7 @@
               The Importance of Games in Maintaining Physical and Mental Health
             </p>
             <a href="{{url_for('Importance_of_Games')}}" class="btn"
-              >Read more <span class="fas fa-chevron-right"></span
+              >Explore Here<span class="fa-solid fa-arrow-right"></span
             ></a>
           </div>
         </div>
@@ -622,118 +921,96 @@
     </section>
 
     <section class="about" id="about">
-      <h1 class="heading">About <span> Us </span></h1>
-      <div class="row">
-        <div class="image">
-          <img src="../static/images/about-us-page-animate.svg" alt="" />
-        </div>
-        <div class="content">
-          <h3>we take care of your healthy life.</h3>
-          <p>
-            We are a Group of fou undergrad student of CBIT, Hyderabad,
-            Telangana, INDIA.
-          </p>
-          <p>
-            We’re a team of four passionate tech enthusiasts with a shared
-            commitment to continuous learning and hands-on development. Our
-            journey spans across multiple tech stacks, giving us a well-rounded
-            foundation to take on diverse challenges. From hackathons to tech
-            competitions, <br />we’ve tackled numerous projects, building skills
-            and pushing our creativity to new heights each time. We believe in
-            the power of collaboration and the importance of staying curious,
-            exploring ideas that blend innovation with practicality. Whether
-            it’s developing a solution from scratch or integrating new
-            technologies, we’re constantly evolving and ready for the next
-            challenge. Curious to learn more about us?
-          </p>
-          <br />
-        </div>
-      </div>
+  <h1 class="heading" style="color: black;">About us</h1>
+  <div class="row">
+    <div class="image">
+      <img src="static\images\about.jpg" alt="About Us Image" />
+    </div>
+    <div class="content">
+      <h3>Your Health and Wellness, Our Priority.</h3>
+      <p style="font-size: 1.2rem;">
+        We are a passionate team of four undergraduate students from Chaitanya Bharathi Institute of Technology, located in the heart of Hyderabad. Our journey began with a shared curiosity for technology and a drive to use our skills to make a positive impact on people's lives. Together, we bring diverse skill sets across various tech domains, ranging from artificial intelligence and machine learning to software engineering and user experience design.
+      </p>
+      <p style="font-size: 1.2rem;">
+        Over the years, we've participated in numerous hackathons and tech competitions, not only honing our technical abilities but also learning the invaluable skills of teamwork, creativity, and adaptability. Our projects have ranged from developing AI-powered health prediction systems to creating interactive applications aimed at enhancing user engagement and experience. Through each project, we've learned that true innovation emerges from collaboration and the willingness to explore ideas outside the conventional.
+      </p>
+      <p style="font-size: 1.2rem;">
+        At the core of our work is a commitment to continuous learning and growth. We believe in staying at the forefront of technology, embracing new challenges, and constantly evolving our knowledge. We’re not just developing solutions; we’re crafting experiences that blend innovation with functionality, aiming to address real-world problems and improve quality of life. Driven by curiosity and a desire to make a difference, we look forward to creating more impactful projects and contributing to the tech community.
+      </p>
+      <p style="font-size: 1.2rem;">
+        If you’re as excited about technology and wellness as we are, we invite you to join us on this journey. Together, we can explore new frontiers, push boundaries, and make a lasting impact. 
+      </p>
+      <br />
+    </div>
+  </div>
+</section>
+
       <style>
         .chatbot-button {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background-color: #16a085;
-          color: white;
-          border: none;
-          border-radius: 50%;
-          width: 60px;
-          height: 60px;
-          font-size: 24px;
-          cursor: pointer;
-          box-shadow: 0 4px 10px rgba(22, 158, 133, 0.5);
-        }
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background-color: #133e87;
+				color: white;
+				border: none;
+				border-radius: 50%;
+				width: 60px;
+				height: 60px;
+				font-size: 24px;
+				cursor: pointer;
+				box-shadow: 0 4px 10px rgba(22, 158, 133, 0.5);
+			}
 
-        .chat-container {
-          display: none; /* Hide the chat by default */
-          position: fixed;
-          bottom: 80px;
-          right: 20px;
-          width: 400px;
-          max-height: 500px;
-          background-color: white;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          box-shadow: 0 4px 10px rgba(22, 158, 133, 0.5);
-          overflow-y: auto;
-        }
+			.chat-container {
+				display: none;
+				position: fixed;
+				bottom: 80px;
+				right: 20px;
+				width: 300px;
+				background-color: #ffffff;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+				overflow: hidden;
+			}
 
-        .chat-header {
-          background-color: #16a085;
-          color: white;
-          padding: 10px;
-          text-align: center;
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-        }
+			.chat-header {
+				background-color: #133e87;
+				color: white;
+				padding: 10px;
+				text-align: center;
+			}
 
-        .chat-body {
-          padding: 10px;
-        }
+			.chat-body {
+				max-height: 200px;
+				padding: 10px;
+				overflow-y: auto;
+			}
 
-        .chat-message {
-          margin: 5px 0;
-          padding: 8px;
-          border-radius: 4px;
-        }
+			.chat-input {
+				display: flex;
+				padding: 10px;
+				border-top: 1px solid #ccc;
+			}
 
-        .user-message {
-          background-color: #e1f5fe;
-          align-self: flex-end;
-        }
+			.chat-input input {
+				flex: 1;
+				padding: 8px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
 
-        .bot-message {
-          background-color: #f1f8e9;
-          align-self: flex-start;
-        }
-
-        .chat-input {
-          display: flex;
-          padding: 10px;
-          border-top: 1px solid #ccc;
-        }
-
-        .chat-input input {
-          flex: 1;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-
-        .chat-input button {
-          background-color: #16a085;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          padding: 10px;
-          margin-left: 5px;
-          cursor: pointer;
-        }
+			.chat-input button {
+				background-color: #133e87;
+				color: white;
+				border: none;
+				padding: 8px;
+				margin-left: 5px;
+				cursor: pointer;
+			}
       </style>
 
       <button class="chatbot-button" id="chatbot-toggle">
-        <i class="fas fa-comment-dots"></i>
+        <i class="fas fa-comment-alt"></i>
       </button>
 
       <!-- Chat Container -->
@@ -820,33 +1097,35 @@
       </script>
     </section>
 
-    <section class="footer">
-      <div class="box-container">
-        <div class="box" style="margin-left: 50px;">
-          <h3>quick links</h3>
-          <a href="{{url_for('index')}}#home"
-            ><i class="fas fa-chevron-right"></i> home</a
-          >
-          <a href="{{url_for('index')}}#services"
-            ><i class="fas fa-chevron-right"></i> services</a
-          >
-          <a href="{{url_for('index')}}#book"
-            ><i class="fas fa-chevron-right"></i>book</a
-          >
-          <a href="{{url_for('index')}}#scans"
-            ><i class="fas fa-chevron-right"></i> scans</a
-          >
-          <a href="{{url_for('index')}}#blogs"
-            ><i class="fas fa-chevron-right"></i> blogs</a
-          >
-          <a href="{{url_for('index')}}#about"
-            ><i class="fas fa-chevron-right"></i> about</a
-          >
-        </div>
+    <section class="footer-section">
+			<div class="box-container">
+				<div class="quick-links">
+					<h3 style="font-size: 2rem;">Quick Links</h3>
+					<a href="{{url_for('index')}}#home"
+						><i class="fas fa-chevron-right"></i> Home</a
+					>
+					<a href="{{url_for('index')}}#services"
+						><i class="fas fa-chevron-right"></i> Services</a
+					>
+					<a href="{{url_for('index')}}#book"
+						><i class="fas fa-chevron-right"></i> Book</a
+					>
+					<a href="{{url_for('index')}}#scans"
+						><i class="fas fa-chevron-right"></i> Scans</a
+					>
+					<a href="{{url_for('index')}}#blogs"
+						><i class="fas fa-chevron-right"></i> Blogs</a
+					>
+					<a href="{{url_for('index')}}#about"
+						><i class="fas fa-chevron-right"></i> About</a
+					>
+				</div>
+			</div>
+			<div class="credit">&copy; Health-Genie @ 2024</div>
+		</section>
 
 
-      <div class="credit">&copy; Health-Genie @ 2024</div>
-    </section>
+
     <script src="./static/js/script.js"></script>
     <script>
       $(".carousel").owlCarousel({
