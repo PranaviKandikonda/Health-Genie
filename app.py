@@ -401,6 +401,8 @@ def videocall():
     
     return render_template('index.html')
 
+
+
 # @app.route("/meeting")
 # def meeting():
 #     if 'user_id' in session:
