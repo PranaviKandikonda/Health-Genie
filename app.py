@@ -1,3 +1,4 @@
+import json
 from flask_sqlalchemy import SQLAlchemy# type: ignore
 from sqlalchemy.exc import IntegrityError# type: ignore
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file# type: ignore
@@ -142,9 +143,11 @@ def index():
     if 'user_id' in session:
         user = User.query.get(session['user_id'])
         username = user.username
+        email = user.email
+        type_of_doctor = user.type_of_doctor
         if user.type_of_doctor:
             appointments = Appointment.query.filter_by(type_of_doctor=user.type_of_doctor).all()
-            return render_template('doctor-dashboard.html', username=username, appointments=appointments)
+            return render_template('doctor-dashboard.html', username=username, email=email, type_of_doctor=type_of_doctor, appointments=appointments)
             
         
         else:
@@ -398,6 +401,25 @@ def videocall():
     
     return render_template('index.html')
 
+# @app.route("/meeting")
+# def meeting():
+#     if 'user_id' in session:
+#         user = User.query.get(session['user_id'])
+#         username = user.username
+#         return render_template('videocall.html', username=username)
+#     return render_template('index.html')
+
+# @app.route("/join", methods=["GET", "POST"])
+# def join():
+#     if 'user_id' in session:
+#         user = User.query.get(session['user_id'])
+#         username = user.username
+#         if request.method == "POST":
+#             room_id = request.form.get("roomID")
+#             return redirect(f"/meeting?roomID={room_id}")
+#         return render_template('join.html') 
+#     return render_template('index.html')
+
 @app.route('/doctor-patients')
 def doctor_patients():
     username = None
@@ -427,8 +449,10 @@ def prescribe_medicine(appointment_id):
 
     if appointment.type_of_doctor != doctor.type_of_doctor:
         return redirect(url_for('index'))
-
-    available_medicines = ["Medicine 1", "Medicine 2", "Medicine 3"]  # Update this with your list of medicines
+    
+    #load medicines from JSON file
+    with open("medicine.json") as f:
+        available_medicines = json.load(f)
 
     if request.method == 'POST':
         selected_medicines = request.form.getlist('medicines[]')
@@ -458,11 +482,11 @@ def prescribe_medicine(appointment_id):
         # Create content for the PDF
         content = []
 
-        # Add Health-Genie header with green color
-        # Health-Genie_header = Paragraph("<font color='green' size='24'><b>Health-Genie: We Care for Your Health</b></font>", header_style)
-        # content.append(Health-Genie_header)
+        # Add Jansevak header with green color
+        # jansevak_header = Paragraph("<font color='green' size='24'><b>Jansevak: We Care for Your Health</b></font>", header_style)
+        # content.append(jansevak_header)
 
-        # Add space after Health-Genie header
+        # Add space after Jansevak header
         content.append(Spacer(1, 12))
 
         # Add patient details
