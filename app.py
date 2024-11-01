@@ -1,4 +1,3 @@
-import json
 from flask_sqlalchemy import SQLAlchemy# type: ignore
 from sqlalchemy.exc import IntegrityError# type: ignore
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file# type: ignore
@@ -29,6 +28,13 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Image, Spacer# type
 from io import BytesIO
 import google.generativeai as genai# type: ignore
 from markdown import markdown# type: ignore
+import json
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+import random
 
 app = Flask(__name__)
 mail = Mail(app)
@@ -36,9 +42,9 @@ load_dotenv()
 
 app.secret_key = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS') == 'True'
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
-app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT') or 465)
+app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT'))
 app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS') == 'True'
 app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL') == 'True'
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
@@ -167,11 +173,6 @@ def profile():
         user_appointments = user.appointments
         return render_template('patient-profile.html', username=username,Email=Email, user_appointments=user_appointments)
     return render_template('index')
-
-# @app.route('/healthy-blogs')
-# def blogs():
-#     return render_template('healthy-blogs.html')
-
 
 @app.route('/patient-register', methods=['GET', 'POST'])
 def register():
@@ -391,36 +392,56 @@ def image_chat():
     else:
         return render_template("image_upload.html")
 
+@app.route('/schedule-meeting/<int:appointment_id>', methods=['POST'])
+def schedule_meeting(appointment_id):
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    doctor = User.query.get(session['user_id'])
+    appointment = Appointment.query.get(appointment_id)
+
+    if appointment.type_of_doctor != doctor.type_of_doctor:
+        return redirect(url_for('index'))
+
+    # Generate a unique meeting room ID
+    room_id = str(random.randint(1000, 9999))
+
+    # Construct the meeting link
+    meeting_link = f"{request.url_root}videocall?roomID={room_id}&username={appointment.name}"
+
+    #Send the meeting link to patient's email
+    send_meeting_email(appointment.email, appointment.name, meeting_link)
+
+    return redirect(url_for('videocall') + f"?roomID={room_id}&username={doctor.username}")
+
+def send_meeting_email(patient_email, patient_name, meeting_link):
+    sender_email = os.getenv('MAIL_USERNAME')
+    sender_password = os.getenv('MAIL_PASSWORD')
+    
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = patient_email
+    msg['Subject'] = "Your Health-Genie Appointment Link"
+    
+    body = f"Dear {patient_name},\n\nYour doctor has scheduled an online appointment. Please join using the link below:\n\n{meeting_link}\n\nRegards,\nHealth-Genie Team"
+    msg.attach(MIMEText(body, 'plain'))
+    
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, patient_email, msg.as_string())
 
 @app.route('/videocall')
 def videocall():
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        username = user.username
-        return render_template('videocall.html',username=username)
+    if 'user_id' not in session:
+        return redirect(url_for('index'))
     
-    return render_template('index.html')
-
-
-
-# @app.route("/meeting")
-# def meeting():
-#     if 'user_id' in session:
-#         user = User.query.get(session['user_id'])
-#         username = user.username
-#         return render_template('videocall.html', username=username)
-#     return render_template('index.html')
-
-# @app.route("/join", methods=["GET", "POST"])
-# def join():
-#     if 'user_id' in session:
-#         user = User.query.get(session['user_id'])
-#         username = user.username
-#         if request.method == "POST":
-#             room_id = request.form.get("roomID")
-#             return redirect(f"/meeting?roomID={room_id}")
-#         return render_template('join.html') 
-#     return render_template('index.html')
+    # Retrieve username and room ID for meeting
+    user = User.query.get(session['user_id'])
+    username = user.username
+    roomID = request.args.get('roomID')
+    
+    return render_template('videocall.html', username=username, roomID=roomID)
 
 @app.route('/doctor-patients')
 def doctor_patients():
@@ -497,7 +518,8 @@ def prescribe_medicine(appointment_id):
             f"Name: {appointment.name}<br/>"
             f"Age: {appointment.age}<br/>"
             f"Blood Group: {appointment.blood_group}<br/>"
-            f"Phone Number: {appointment.phone_number}"
+            f"Phone Number: {appointment.phone_number}<br/>"
+            f"Email ID: {appointment.email}"
         )
         content.append(Paragraph(patient_details, styles['Normal']))
 
@@ -539,6 +561,35 @@ def prescribe_medicine(appointment_id):
         appointment.status = 'Prescribed'
         appointment.prescription_file = pdf_filepath
         db.session.commit()
+
+        #Send the prescription PDF to the patient's email
+        sender_email = os.getenv("MAIL_USERNAME")
+        sender_password = os.getenv("MAIL_PASSWORD")
+        smtp_server = os.getenv("MAIL_SERVER")
+        smtp_port = int(os.getenv("MAIL_PORT"))
+
+        #Create email message
+        msg = MIMEMultipart()
+        msg['From'] = sender_email
+        msg['To'] = appointment.email
+        msg['Subject'] = "Your Prescription from Health-Genie"
+        body = "Please find your prescription attached.\n\nBest wishes for your recovery!\nHealth-Genie Team"
+
+        msg.attach(MIMEText(body, 'plain'))
+
+        #Attach the PDF file
+        with open(pdf_filepath, 'rb') as attachment:
+            part = MIMEBase('application', 'octet-stream')
+            part.set_payload(attachment.read())
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', f'attachemt; filename = {pdf_filename}')
+        msg.attach(part)
+
+        #Send the email
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(sender_email, sender_password)
+            server.send_message(msg)
 
         return redirect(url_for('doctor_patients'))
 

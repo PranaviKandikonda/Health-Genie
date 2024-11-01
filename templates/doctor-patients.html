@@ -116,6 +116,29 @@
 								>
 								{% endif %}
 							</td>
+							<td>
+								<button
+									class="btn btn-primary"
+									onclick="scheduleMeeting({{ appointment.id }})"
+								>
+									Schedule Meeting
+								</button>
+							</td>
+
+							<script>
+								function scheduleMeeting(appointmentId) {
+									fetch(`/schedule-meeting/${appointmentId}`, {
+										method: "POST",
+									})
+										.then((response) => {
+											if (response.redirected) {
+												// Redirect the doctor to the videocall page
+												window.location.href = response.url
+											}
+										})
+										.catch((error) => console.error("Error:", error))
+								}
+							</script>
 						</tr>
 						{% endfor %}
 					</tbody>
