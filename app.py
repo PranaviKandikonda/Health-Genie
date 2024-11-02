@@ -691,6 +691,5 @@ def cataract():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=port)  # Ensure it listens on all interfaces
+    app.run(host='0.0.0.0', port=port, debug=True)  # Ensure it listens on all interfaces
     create_tables()
-    app.run(debug=True)
