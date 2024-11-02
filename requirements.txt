@@ -10,5 +10,4 @@ Flask-mail
 pdfkit
 reportlab
 google-generativeai 
- 
- 
+markdown
