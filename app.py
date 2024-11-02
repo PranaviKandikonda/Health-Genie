@@ -37,6 +37,7 @@ from email import encoders
 import random
 
 app = Flask(__name__)
+port = int(os.environ.get("PORT", 5000))
 mail = Mail(app)
 load_dotenv()
 
@@ -566,7 +567,7 @@ def prescribe_medicine(appointment_id):
         sender_email = os.getenv("MAIL_USERNAME")
         sender_password = os.getenv("MAIL_PASSWORD")
         smtp_server = os.getenv("MAIL_SERVER")
-        smtp_port = int(os.getenv("MAIL_PORT", 5000))
+        smtp_port = int(os.getenv("MAIL_PORT"))
 
         #Create email message
         msg = MIMEMultipart()
@@ -690,5 +691,6 @@ def cataract():
 
 
 if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=port)  # Ensure it listens on all interfaces
     create_tables()
     app.run(debug=True)
