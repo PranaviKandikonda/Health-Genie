@@ -566,7 +566,7 @@ def prescribe_medicine(appointment_id):
         sender_email = os.getenv("MAIL_USERNAME")
         sender_password = os.getenv("MAIL_PASSWORD")
         smtp_server = os.getenv("MAIL_SERVER")
-        smtp_port = int(os.getenv("MAIL_PORT"))
+        smtp_port = int(os.getenv("MAIL_PORT", 5000))
 
         #Create email message
         msg = MIMEMultipart()
