@@ -14,6 +14,65 @@
 		/>
 		<link rel="stylesheet" href="./static/css/style.css" />
 		<style>
+
+.heading {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #2a7b8c; /* Dark teal color for the heading */
+}
+
+.icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icon a {
+    color: #555;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.image img {
+    max-width: 100%;
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    max-width: 600px; /* Limit the width of text content */
+    margin: 0 20px;
+}
+
+.content h3 {
+    margin-top: 20px;
+    color: #2a7b8c; /* Same color for subheadings */
+}
+
+.content p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image, .content {
+        margin: 10px 0;
+    }
+}
+
 			.footer-section {
 				background-color: rgb(96, 138, 193); /* Blue background */
 				color: white;
@@ -56,126 +115,50 @@
 				color: #e0e0e0; /* Light grey on hover */
 				text-decoration: underline;
 			}
-			label {
-				color: green;
-				font-size: 1.3rem;
-			}
-			.logo {
-				color: black;
-			}
-			/* CSS for Appointment Booking Form */
-			body {
-				font-family: Arial, sans-serif;
-				color: #333;
-				margin: 0;
-				padding: 0;
-			}
-
-			.book {
-				text-align: center;
-				padding-top: 2rem;
-			}
-
-			.heading {
-				color: #333;
-				font-size: 2rem;
-				font-weight: bold;
-				margin-bottom: 1.5rem;
-			}
-
-			.glass-row {
-				background: #ffffff;
-				border-radius: 12px;
-				padding: 2rem;
-				width: 90%;
-				max-width: 500px;
-				margin: 0 auto;
-				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-				color: #333;
-			}
-
-			.glass-row form {
+			.icon {
+				padding: 1rem 0;
 				display: flex;
-				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
 			}
 
-			form label {
-				font-size: 1rem;
-				color: #333;
-				margin-top: 1rem;
-				font-weight: 600;
+			.icon a {
+				font-size: 1.4rem;
+				color: var(--light-color);
 			}
 
-			form .box {
-				width: 100%;
-				padding: 0.9rem;
-				margin: 0.4rem 0;
-				border-radius: 8px;
-				border: 1px solid #ccc;
-				background-color: #f9f9f9;
-				color: #333;
-				font-size: 1rem;
-				outline: none;
-				box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+			.icon a:hover {
+				color: var(--green);
 			}
 
-
-			form .btn {
-				width: 100%;
-				padding: 0.9rem;
-				margin-top: 1.2rem;
-				border-radius: 8px;
-				border: none;
-				background: #4caf50;
-				color: #ffffff;
-				font-size: 1.1rem;
-				font-weight: bold;
-				cursor: pointer;
-				transition: background 0.3s ease;
-				box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+			.icon a i {
+				padding-right: 0.5rem;
+				color: var(--green);
 			}
 
-			form .btn:hover {
-				background: #43a047;
+			.content {
+				padding-top: 1rem;
 			}
 
-			form p {
-				color: #333;
-				font-size: 0.9rem;
-				margin-top: 1.5rem;
-				line-height: 1.4;
+			.content h3 {
+				color: var(--black);
+				font-size: 3rem;
 			}
 
-			form a {
-				color: #4caf50;
-				text-decoration: none;
-				font-weight: 600;
-			}
-
-			form a:hover {
-				color: #43a047;
-				text-decoration: underline;
-			}
-
-			/* Input placeholder color */
-			form .box::placeholder {
-				color: #aaa;
-			}
-
-			/* Adjusting select drop-down arrow for consistency */
-			select {
-				appearance: none;
-				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234CAF50' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-				background-repeat: no-repeat;
-				background-position: right 0.8rem center;
-				background-size: 1rem;
+			.content p {
+				color: black;
+				font-size: 1.5rem;
+				line-height: 1.8;
+				padding: 1rem 0;
 			}
 		</style>
 	</head>
 
 	<body>
 		<header class="header">
-			<a href="{{url_for('index')}}" class="logo">Health-Genie</a>
+			<a href="{{url_for('index')}}" class="logo" style="color: white"
+				>Health-Genie</a
+			>
 			<nav class="navbar">
 				{% if username %}
 				<a href="{{url_for('index')}}#home">Home</a>
@@ -192,93 +175,29 @@
 
 			<div id="menu-btn" class="fas fa-bars"></div>
 		</header>
-		<section class="book" id="book">
-			<h1 class="heading" style="margin-top: 8rem">
-				Book your appointment here!!
-			</h1>
-			<div class="glass-row" style="margin-top: 40px">
-				<form action="{{ url_for('book_appointment') }}" method="post">
-					<a href="{{url_for('index')}}" class="logo">Health-Genie</a
-					><br /><br />
-					<label for="name">Enter your name:</label>
-					<input
-						type="text"
-						placeholder="Patient Name"
-						class="box"
-						id="Name"
-						name="name"
-						required
-					/>
-					<label for="name">Enter your Age:</label>
-					<input
-						placeholder="Age"
-						class="box"
-						id="Age"
-						type="number"
-						name="age"
-						required
-						min="15"
-						max="75"
-					/>
-					<label for="name">Enter your Blood Group:</label>
-					<input
-						placeholder="Blood group"
-						class="box"
-						id="Blood group"
-						type="text"
-						name="blood_group"
-						required
-					/>
-					<label for="name">Select Preferred time slot :</label>
-					<select name="time_slot" required>
-						<option value="Morning">Morning (8AM-11AM)</option>
-						<option value="Afternoon">Afternoon (1PM-4PM)</option>
-						<option value="Evening">Evening (5PM-8PM)</option></select
-					><br /><br />
-					<label for="name">Enter your Phone Number:</label>
-					<input
-						placeholder="Phone Number"
-						class="box"
-						id="Phone Number"
-						type="number"
-						name="phone_number"
-						required
-					/>
-					<label for="name">Enter your Email:</label>
-					<input
-						placeholder="Email"
-						class="box"
-						id="Email"
-						type="email"
-						name="email"
-						required
-					/>
-					<label for="name">Select type of doctor :</label>
-					<select name="type_of_doctor" required>
-						{% for doctor_type in doctor_types %}
-						<div class="select_option">
-							<option value="{{ doctor_type }}">{{ doctor_type }}</option>
-						</div>
-						{% endfor %}</select
-					><br />
 
-					<input type="submit" value="Book" class="btn" />
-					<p style="color: #16a085; font-size: 1.3rem; margin-top: 2rem">
-						By continuing, you agree to Health-Genie's
-						<a style="color: #16a085" href="{{url_for('policy')}}"
-							>Terms of Service</a
-						>
-						Opens a new tab and acknowledge you've read our Privacy Policy.
-						Notice at collection.
-					</p>
-				</form>
-			</div>
+		<section class="about" id="about">
+    <h1 class="heading" style="margin-top: 8rem; color: black">
+        virtual consultations and appointments
+    </h1>
+    <div class="icon">
+    </div>
+    <div class="row">
+        <div class="content">
+            <p>Once you book an appointment, the doctor will schedule a meeting according to the time slot you selected. You will
+                then receive an email containing the meeting link and other relevant details to join at the scheduled time. This ensures 
+                that the appointment aligns with your chosen slot, allowing you to connect seamlessly with the doctor.</p>
+        </div>
+    </div>
+</section>
+
+
 			<style>
 				.chatbot-button {
 					position: fixed;
 					bottom: 20px;
 					right: 20px;
-					background-color: #133e87;
+					background-color: rgb(19, 62, 135);
 					color: white;
 					border: none;
 					border-radius: 50%;
@@ -286,32 +205,50 @@
 					height: 60px;
 					font-size: 24px;
 					cursor: pointer;
-					box-shadow: 0 4px 10px rgba(22, 158, 133, 0.5);
+					box-shadow: 0 4px 10px rgb(19, 62, 135);
 				}
 
 				.chat-container {
-					display: none;
+					display: none; /* Hide the chat by default */
 					position: fixed;
 					bottom: 80px;
 					right: 20px;
-					width: 300px;
-					background-color: #ffffff;
-					border-radius: 10px;
-					box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-					overflow: hidden;
+					width: 400px;
+					max-height: 500px;
+					background-color: white;
+					border: 1px solid #ccc;
+					border-radius: 8px;
+					box-shadow: 0 4px 10px rgb(19, 62, 135);
+					overflow-y: auto;
 				}
 
 				.chat-header {
-					background-color: #133e87;
+					background-color: rgb(19, 62, 135);
 					color: white;
 					padding: 10px;
 					text-align: center;
+					border-top-left-radius: 8px;
+					border-top-right-radius: 8px;
 				}
 
 				.chat-body {
-					max-height: 200px;
 					padding: 10px;
-					overflow-y: auto;
+				}
+
+				.chat-message {
+					margin: 5px 0;
+					padding: 8px;
+					border-radius: 4px;
+				}
+
+				.user-message {
+					background-color: #e1f5fe;
+					align-self: flex-end;
+				}
+
+				.bot-message {
+					background-color: #f1f8e9;
+					align-self: flex-start;
 				}
 
 				.chat-input {
@@ -322,16 +259,17 @@
 
 				.chat-input input {
 					flex: 1;
-					padding: 8px;
+					padding: 10px;
 					border: 1px solid #ccc;
 					border-radius: 4px;
 				}
 
 				.chat-input button {
-					background-color: #133e87;
+					background-color: rgb(19, 62, 135);
 					color: white;
 					border: none;
-					padding: 8px;
+					border-radius: 4px;
+					padding: 10px;
 					margin-left: 5px;
 					cursor: pointer;
 				}
@@ -421,7 +359,6 @@
 				}
 			</script>
 		</section>
-
 		<section class="footer-section">
 			<div class="box-container">
 				<div class="quick-links">
@@ -448,30 +385,6 @@
 			</div>
 			<div class="credit">&copy; Health-Genie @ 2024</div>
 		</section>
-
-		<script src="./static/js/script.js"></script>
-		<script>
-			$(".carousel").owlCarousel({
-				margin: 20,
-				loop: true,
-				autoplay: true,
-				autoplayTimeOut: 2000,
-				autoplayHoverPause: true,
-				responsive: {
-					0: {
-						items: 1,
-						nav: false,
-					},
-					600: {
-						items: 2,
-						nav: false,
-					},
-					1000: {
-						items: 4,
-						nav: false,
-					},
-				},
-			})
-		</script>
+		<script src="../static/js/script.js"></script>
 	</body>
 </html>

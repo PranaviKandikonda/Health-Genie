@@ -107,22 +107,22 @@ body {
 }
 
 form select {
-	padding: 1rem;
-	background: rgb(19, 62, 135); /* Sky Blue background */
-	border-radius: 0.5rem;
-	flex: 1 1 45rem;
-	border: var(--border);
-	color: black; /* Text color changed to black */
+    padding: 1rem; /* Adjusted padding for better height control */
+    border-radius: 1rem;
+    border: 2px solid rgb(19, 62, 135);
+    color: black; /* Text color changed to black */
+    width: 100%; /* Ensures full width within the form */
+    height: auto; /* Allow height to adjust based on content */
+    font-size: 1.6rem; /* You can adjust the font size as needed */
+    outline: none; /* Removes the default focus outline */
 }
 
+/* Styling for options can be limited; padding won't affect them much */
 form select option {
-	padding: 2rem;
-	background: rgba(135, 206, 250, 0.2); /* Light Sky Blue */
-	border-radius: 0.5rem;
-	flex: 1 1 45rem;
-	border: rgb(19, 62, 135);
-	color: black; /* Text color changed to black */
+    background: rgba(135, 206, 250, 0.2); /* Light Sky Blue */
+    color: black; /* Text color changed to black */
 }
+
 
 input[type="text"],
 input[type="password"],
@@ -771,7 +771,7 @@ section {
 }
 
 .blogs .box-container .glass-box .content p {
-	color: rgba(0, 0, 0, 0.8); /* Reduced black intensity */
+	color: rgba(28, 28, 28, 0.8); /* Reduced black intensity */
 	font-size: 1.5rem;
 	line-height: 1.8;
 	padding: 1rem 0;

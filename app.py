@@ -341,6 +341,13 @@ chat_model = model.start_chat(history=[])   # chat based on history
 
 img_model = genai.GenerativeModel('gemini-pro-vision')
 
+@app.route('/conference')
+def conference():
+    return render_template('conference.html')
+
+@app.route('/mail-service')
+def mail_service():
+    return render_template('mail_service.html')
 
 @app.route("/chat", methods=['GET', 'POST'])
 def chat():
