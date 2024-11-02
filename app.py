@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_mail import Mail, Message# type: ignore
 import random
 import string
-import jsonify# type: ignore
+from flask import Flask, jsonify# type: ignore
 from werkzeug.utils import secure_filename # type: ignore
 import os
 import plotly.express as px# type: ignore
